@@ -1,0 +1,118 @@
+{
+  "project_info": {
+    "project_number": "465459152178",
+    "project_id": "samarapp-2024",
+    "storage_bucket": "samarapp-2024.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:465459152178:android:3c250e3f1e025eb3bc832b",
+        "android_client_info": {
+          "package_name": "com.SamarApp.Samar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "117621346755498465526",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdOEA2AVLRodFPen-qz0ThZFfPX-efL0I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "117621346755498465526",
+              "client_type": 3
+            },
+            {
+              "client_id": "465459152178-248gq21iif8ovje6sagkiefsp58358c2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.samarapp.samar_Man"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:465459152178:android:2c014f9a27690e28bc832b",
+        "android_client_info": {
+          "package_name": "com.SamarApp.Samar_Man"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "117621346755498465526",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdOEA2AVLRodFPen-qz0ThZFfPX-efL0I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "117621346755498465526",
+              "client_type": 3
+            },
+            {
+              "client_id": "465459152178-248gq21iif8ovje6sagkiefsp58358c2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.samarapp.samar_Man"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:465459152178:android:614ee80d16fea127bc832b",
+        "android_client_info": {
+          "package_name": "com.SamarApp.Samar_Store"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "117621346755498465526",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdOEA2AVLRodFPen-qz0ThZFfPX-efL0I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "117621346755498465526",
+              "client_type": 3
+            },
+            {
+              "client_id": "465459152178-248gq21iif8ovje6sagkiefsp58358c2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.samarapp.samar_Man"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
