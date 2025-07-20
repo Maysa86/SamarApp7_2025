@@ -27,22 +27,28 @@ class SplashScreen extends StatefulWidget {
 
 class SplashScreenState extends State<SplashScreen> {
   final GlobalKey<ScaffoldState> _globalKey = GlobalKey();
-  late StreamSubscription<ConnectivityResult> _onConnectivityChanged;
+
+  late StreamSubscription<List<ConnectivityResult>> _onConnectivityChanged;
 
   @override
   void initState() {
     super.initState();
 
     bool firstTime = true;
+
     _onConnectivityChanged = Connectivity()
         .onConnectivityChanged
-        .listen((ConnectivityResult result) {
+        .listen((List<ConnectivityResult> resultList) {
+      final result = resultList.isNotEmpty ? resultList.first : ConnectivityResult.none;
+
       if (!firstTime) {
         bool isNotConnected = result != ConnectivityResult.wifi &&
             result != ConnectivityResult.mobile;
-        isNotConnected
-            ? const SizedBox()
-            : ScaffoldMessenger.of(context).hideCurrentSnackBar();
+
+        if (!isNotConnected) {
+          ScaffoldMessenger.of(context).hideCurrentSnackBar();
+        }
+
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
           backgroundColor: isNotConnected ? Colors.red : Colors.green,
           duration: Duration(seconds: isNotConnected ? 6000 : 3),
@@ -51,27 +57,31 @@ class SplashScreenState extends State<SplashScreen> {
             textAlign: TextAlign.center,
           ),
         ));
+
         if (!isNotConnected) {
           _route();
         }
       }
+
       firstTime = false;
     });
 
     Get.find<SplashController>().initSharedData();
+
     if ((AuthHelper.getGuestId().isNotEmpty || AuthHelper.isLoggedIn()) &&
         Get.find<SplashController>().cacheModule != null) {
       Get.find<CartController>().getCartDataOnline();
     }
+
     _route();
   }
 
   @override
   void dispose() {
-    super.dispose();
-
     _onConnectivityChanged.cancel();
+    super.dispose();
   }
+
 
   void _route() {
     Get.find<SplashController>().getConfigData().then((isSuccess) {

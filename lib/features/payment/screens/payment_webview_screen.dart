@@ -115,7 +115,7 @@ class PaymentScreenState extends State<PaymentWebViewScreen> {
         body: Stack(
           children: [
             InAppWebView(
-              initialUrlRequest: URLRequest(url: Uri.parse(selectedUrl)),
+              initialUrlRequest: URLRequest(url: WebUri(selectedUrl)),
               initialUserScripts: UnmodifiableListView<UserScript>([]),
               pullToRefreshController: pullToRefreshController,
               initialOptions: InAppWebViewGroupOptions(

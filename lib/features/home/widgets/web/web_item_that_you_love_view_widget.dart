@@ -24,8 +24,8 @@ class WebItemThatYouLoveViewWidget extends StatefulWidget {
 }
 
 class _WebItemThatYouLoveViewWidgetState extends State<WebItemThatYouLoveViewWidget> {
-  final CarouselController carouselController = CarouselController();
-
+ //final CarouselController carouselController = CarouselController();
+  final CarouselSliderController carouselController = CarouselSliderController();
   @override
   Widget build(BuildContext context) {
     bool isShop = Get.find<SplashController>().module != null && Get.find<SplashController>().module!.moduleType.toString() == AppConstants.ecommerce;

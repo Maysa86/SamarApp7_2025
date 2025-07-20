@@ -20,8 +20,8 @@ class WebCouponBannerViewWidget extends StatefulWidget {
 
 class _WebCouponBannerViewWidgetState extends State<WebCouponBannerViewWidget> {
 
-  final CarouselController carouselController = CarouselController();
-
+  //final CarouselController carouselController = CarouselController();
+  final CarouselSliderController carouselController = CarouselSliderController();
   @override
   Widget build(BuildContext context) {
     return GetBuilder<CouponController>(builder: (couponController) {

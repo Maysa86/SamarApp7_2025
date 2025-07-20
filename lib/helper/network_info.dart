@@ -14,19 +14,25 @@ class NetworkInfo {
   NetworkInfo(this.connectivity);
 
   Future<bool> get isConnected async {
-    ConnectivityResult result = await connectivity.checkConnectivity();
+    final results = await connectivity.checkConnectivity();
+    final result = results.isNotEmpty ? results.first : ConnectivityResult.none;
     return result != ConnectivityResult.none;
   }
 
+
   static void checkConnectivity(BuildContext context) {
-    Connectivity().onConnectivityChanged.listen((ConnectivityResult result) {
+    Connectivity().onConnectivityChanged.listen((List<ConnectivityResult> results) {
+      final result = results.isNotEmpty ? results.first : ConnectivityResult.none;
+
       if (Get.find<SplashController>().firstTimeConnectionCheck) {
         Get.find<SplashController>().setFirstTimeConnectionCheck(false);
       } else {
         bool isNotConnected = result == ConnectivityResult.none;
-        isNotConnected
-            ? const SizedBox()
-            : ScaffoldMessenger.of(context).hideCurrentSnackBar();
+
+        if (!isNotConnected) {
+          ScaffoldMessenger.of(context).hideCurrentSnackBar();
+        }
+
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
           backgroundColor: isNotConnected ? Colors.red : Colors.green,
           duration: Duration(seconds: isNotConnected ? 6000 : 3),
@@ -38,6 +44,7 @@ class NetworkInfo {
       }
     });
   }
+
 
   static Future<XFile> compressImage(XFile file) async {
     final targetPath = '${file.path}_compressed.jpg';

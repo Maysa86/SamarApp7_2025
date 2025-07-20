@@ -17,8 +17,8 @@ class WebHighlightWidget extends StatefulWidget {
 
 class _WebHighlightWidgetState extends State<WebHighlightWidget> {
 
-  final CarouselController _carouselController = CarouselController();
-
+  final CarouselSliderController _carouselController = CarouselSliderController();
+ // final CarouselSliderController carouselController = CarouselSliderController();
   @override
   Widget build(BuildContext context) {
     return GetBuilder<AdvertisementController>(builder: (advertisementController) {

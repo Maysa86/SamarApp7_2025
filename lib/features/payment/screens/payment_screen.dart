@@ -116,9 +116,14 @@ class PaymentScreenState extends State<PaymentScreen> {
                 useOnLoadResource: true,
                 javaScriptEnabled: true)));
 
-    await browser.openUrlRequest(
-        urlRequest: URLRequest(url: Uri.parse(selectedUrl)), options: options);
-  }
+
+        await browser.openUrlRequest(
+            urlRequest: URLRequest(url: WebUri(selectedUrl)),
+            options: options
+        );
+
+
+    }
 
   @override
   Widget build(BuildContext context) {

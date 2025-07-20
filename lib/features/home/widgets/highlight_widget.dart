@@ -28,9 +28,9 @@ class HighlightWidget extends StatefulWidget {
 }
 
 class _HighlightWidgetState extends State<HighlightWidget> {
-  final carousel.CarouselController _carouselController =
-      carousel.CarouselController();
-
+  //final carousel.CarouselController _carouselController =
+  //    carousel.CarouselController();
+  final carousel.CarouselSliderController _carouselController = carousel.CarouselSliderController();
   @override
   Widget build(BuildContext context) {
     return GetBuilder<AdvertisementController>(

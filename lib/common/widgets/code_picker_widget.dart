@@ -172,10 +172,6 @@ class _CodePickerWidgetState extends State<CodePickerWidget> {
             constraints: const BoxConstraints(maxHeight: 500, maxWidth: 400),
             child: Dialog(
               child: SelectionDialog(
-                hideHeaderText: false,
-                headerAlignment: MainAxisAlignment.center,
-                headerTextStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                topBarPadding: const EdgeInsets.all(8),
                 elements!,
                 favoriteElements!,
                 showCountryOnly: widget.showCountryOnly,
@@ -192,8 +188,7 @@ class _CodePickerWidgetState extends State<CodePickerWidget> {
                 hideSearch: widget.hideSearch!,
                 closeIcon: widget.closeIcon,
                 flagDecoration: widget.flagDecoration,
-              )
-              ,
+              ),
             ),
           ),
         ),
@@ -213,10 +208,6 @@ class _CodePickerWidgetState extends State<CodePickerWidget> {
         context: context,
         builder: (context) => Center(
           child: SelectionDialog(
-            hideHeaderText: false,
-            headerAlignment: MainAxisAlignment.center,
-            headerTextStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-            topBarPadding: const EdgeInsets.all(8),
             elements!,
             favoriteElements!,
             showCountryOnly: widget.showCountryOnly,
@@ -227,14 +218,13 @@ class _CodePickerWidgetState extends State<CodePickerWidget> {
             boxDecoration: widget.boxDecoration,
             showFlag: widget.showFlagDialog ?? widget.showFlag,
             flagWidth: widget.flagWidth!,
+            flagDecoration: widget.flagDecoration,
             size: widget.dialogSize,
             backgroundColor: widget.dialogBackgroundColor,
             barrierColor: widget.barrierColor,
             hideSearch: widget.hideSearch!,
             closeIcon: widget.closeIcon,
-            flagDecoration: widget.flagDecoration,
-          )
-          ,
+          ),
         ),
       ).then((e) {
         if (e != null) {
